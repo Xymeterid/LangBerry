@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="600.0" maxWidth="350.0" minHeight="600.0" minWidth="350.0" prefHeight="600.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="85.0" text="Back" />
+      <Button layoutX="251.0" layoutY="14.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="85.0" text="Add" />
+      <ImageView fitHeight="62.0" fitWidth="61.0" layoutX="140.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/green.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="194.0" fitWidth="200.0" layoutX="70.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/人-order.gif" />
+         </image>
+      </ImageView>
+      <Label layoutX="153.0" layoutY="277.0" prefHeight="27.0" prefWidth="44.0" text="ひと">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ScrollBar layoutX="333.0" layoutY="72.0" orientation="VERTICAL" prefHeight="503.0" prefWidth="14.0" />
+      <ScrollPane layoutX="14.0" layoutY="304.0" prefHeight="287.0" prefWidth="322.0">
+         <content>
+            <GridPane prefHeight="378.0" prefWidth="326.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label prefHeight="82.0" prefWidth="390.0" text="1. man; person" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="307.0" prefWidth="526.0" text="2. human being; mankind; people" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="234.0" prefWidth="515.0" text="3. human (Homo sapiens); humans as a species​" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="214.0" prefWidth="553.0" text="4. character; personality" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="160.0" prefWidth="636.0" text="5. man of talent; true man" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="214.0" prefWidth="552.0" text="6. another person; other people; others" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="206.0" prefWidth="530.0" text="7. adult" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+         </content>
+      </ScrollPane>
+   </children>
+</Pane>
