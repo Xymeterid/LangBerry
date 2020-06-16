@@ -91,6 +91,25 @@ public class CardDao implements Dao<WordCard> {
         }
     }
 
+    @Override
+    public Collection<WordCard> getAlThatMatch(String query) {
+        try {
+            Statement stmt = connection.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM " + tableName +
+                    " "+query);
+            Set<WordCard> items = new HashSet<>();
+            while(rs.next())
+            {
+                WordCard item = extractCardFromResultSet(rs);
+                items.add(item);
+            }
+            return items;
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return new HashSet<>();
+    }
+
     private WordCard extractCardFromResultSet(ResultSet rs) throws SQLException {
         return new WordCard(
                 rs.getInt("id"),

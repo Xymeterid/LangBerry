@@ -5,6 +5,7 @@ import entities.WordCard;
 import javafx.concurrent.WorkerStateEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import utils.CardBundle;
 import utils.FXUtils;
@@ -20,6 +21,9 @@ public class CardController implements Initializable {
 
     @FXML
     TextField questionInput, answerInput;
+
+    @FXML
+    Label info;
 
     public void backButtonPressed() {
         FXUtils.loadScene(getClass().getResource("../fxml/card_collection.fxml"));
@@ -45,6 +49,7 @@ public class CardController implements Initializable {
         if (type == CardBundle.requestType.SHOW_EXISTING){
             questionInput.setText(card.getQuestion());
             answerInput.setText(card.getAnswer());
+            info.setText(card.toString());
         }
     }
 }

@@ -54,7 +54,7 @@ public class WordCard implements Comparable<WordCard>{
                 lastDayIncrease = lastDayIncrease / 4 + 1;
                 break;
             case UNSURE:
-                lastDayIncrease = lastDayIncrease + 1;
+                //Do nothing
                 break;
             case GOOD:
                 lastDayIncrease = lastDayIncrease * 2 + 1;

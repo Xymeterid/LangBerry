@@ -15,7 +15,7 @@
          <top>
             <BorderPane prefHeight="88.0" prefWidth="1072.0" styleClass="titleCard" BorderPane.alignment="CENTER">
                <left>
-                  <Button id="backButton" mnemonicParsing="false" onMouseClicked="#backButtonClicked" styleClass="menuButton" text="&lt;--" BorderPane.alignment="CENTER">
+                  <Button id="backButton" mnemonicParsing="false" onMouseClicked="#backButtonClicked" styleClass="menuButton" text="🠔" BorderPane.alignment="CENTER">
                      <BorderPane.margin>
                         <Insets left="15.0" />
                      </BorderPane.margin>

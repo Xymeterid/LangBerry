@@ -9,6 +9,7 @@ import lombok.Setter;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ListResourceBundle;
 
 public class FXUtils {
 
@@ -29,7 +30,7 @@ public class FXUtils {
         return null;
     }
 
-    public static Scene loadScene(URL path, CardBundle bundle){
+    public static Scene loadScene(URL path, ListResourceBundle bundle){
         try {
             Parent root = FXMLLoader.load(path, bundle);
             Scene res = new Scene(root);

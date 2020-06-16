@@ -17,7 +17,7 @@
          <top>
             <BorderPane prefHeight="76.0" prefWidth="1047.0" styleClass="titleCard" BorderPane.alignment="CENTER">
                <left>
-                  <Button mnemonicParsing="false" onAction="#backButtonPressed" styleClass="menuButton" text="&lt;--" BorderPane.alignment="CENTER">
+                  <Button mnemonicParsing="false" onAction="#backButtonPressed" styleClass="menuButton" text="🠔" BorderPane.alignment="CENTER">
                      <BorderPane.margin>
                         <Insets left="15.0" />
                      </BorderPane.margin>
@@ -85,6 +85,13 @@
                      </VBox.margin></Line>
                </children>
             </VBox>
-         </center></BorderPane>
+         </center>
+         <bottom>
+            <Label fx:id="info" text="Testing info" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="80.0" />
+               </BorderPane.margin>
+            </Label>
+         </bottom></BorderPane>
    </children>
 </AnchorPane>

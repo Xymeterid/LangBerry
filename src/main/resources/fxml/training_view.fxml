@@ -17,7 +17,7 @@
          <top>
             <BorderPane prefHeight="76.0" prefWidth="200.0" styleClass="titleCard" BorderPane.alignment="CENTER">
                <left>
-                  <Button mnemonicParsing="false" onAction="#backButtonPressed" styleClass="menuButton" text="&lt;--" BorderPane.alignment="CENTER">
+                  <Button mnemonicParsing="false" onAction="#backButtonPressed" styleClass="menuButton" text="🠔" BorderPane.alignment="CENTER">
                      <BorderPane.margin>
                         <Insets left="15.0" />
                      </BorderPane.margin>
@@ -40,7 +40,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button fx:id="badButton" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" styleClass="badAnswerButton" text="Bad" GridPane.rowIndex="1">
+                  <Button fx:id="badButton" mnemonicParsing="false" onAction="#badButtonPressed" prefHeight="1000.0" prefWidth="1000.0" styleClass="badAnswerButton" text="Bad" GridPane.rowIndex="1">
                      <GridPane.margin>
                         <Insets bottom="15.0" left="15.0" right="5.0" top="5.0" />
                      </GridPane.margin>
@@ -48,7 +48,7 @@
                         <Font size="24.0" />
                      </font>
                   </Button>
-                  <Button fx:id="unsureButton" layoutX="15.0" layoutY="15.0" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" styleClass="unsureAnswerButton" text="Unsure" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Button fx:id="unsureButton" layoutX="15.0" layoutY="15.0" mnemonicParsing="false" onAction="#unsureButtonPressed" prefHeight="1000.0" prefWidth="1000.0" styleClass="unsureAnswerButton" text="Unsure" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -56,7 +56,7 @@
                         <Insets bottom="15.0" left="5.0" right="5.0" top="5.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button fx:id="goodButton" layoutX="278.0" layoutY="10.0" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" styleClass="goodAnswerButton" text="Good" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <Button fx:id="goodButton" layoutX="278.0" layoutY="10.0" mnemonicParsing="false" onAction="#goodButtonPressed" prefHeight="1000.0" prefWidth="1000.0" styleClass="goodAnswerButton" text="Good" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -64,7 +64,7 @@
                         <Insets bottom="15.0" left="5.0" right="5.0" top="5.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button fx:id="excellentButton" layoutX="546.0" layoutY="10.0" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" styleClass="excellentAnswerButton" text="Excellent" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                  <Button fx:id="excellentButton" layoutX="546.0" layoutY="10.0" mnemonicParsing="false" onAction="#excellentButtonPressed" prefHeight="1000.0" prefWidth="1000.0" styleClass="excellentAnswerButton" text="Excellent" GridPane.columnIndex="3" GridPane.rowIndex="1">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -85,7 +85,7 @@
          <center>
             <BorderPane>
                <top>
-                  <Label text="Question" BorderPane.alignment="CENTER">
+                  <Label fx:id="question" text="Question" BorderPane.alignment="CENTER">
                      <BorderPane.margin>
                         <Insets top="100.0" />
                      </BorderPane.margin>

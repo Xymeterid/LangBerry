@@ -10,4 +10,5 @@ public interface Dao<T> {
     int save(T t);
     void update(T t);
     void delete(T t);
+    Collection<T> getAlThatMatch(String query);
 }
