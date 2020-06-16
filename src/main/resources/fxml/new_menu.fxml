@@ -55,6 +55,14 @@
                         <Insets left="15.0" right="15.0" top="15.0" />
                      </VBox.margin>
                   </Button>
+                  <Button id="training" layoutX="25.0" layoutY="335.0" mnemonicParsing="false" onAction="#exitButtonPressed" prefHeight="75.0" prefWidth="1042.0" styleClass="menuButton" text="Exit">
+                     <font>
+                        <Font size="33.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="15.0" right="15.0" top="15.0" />
+                     </VBox.margin>
+                  </Button>
                </children>
             </VBox>
          </center>
