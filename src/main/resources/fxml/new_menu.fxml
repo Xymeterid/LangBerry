@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="733.0" prefWidth="1072.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MenuController">
+   <children>
+      <BorderPane prefHeight="733.0" prefWidth="1072.0">
+         <top>
+            <Pane prefHeight="224.0" prefWidth="1072.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" prefHeight="227.0" prefWidth="1072.0" style="-fx-background-color: #69b5fd; -fx-text-fill: #f0f8ff;" text="LANGBERRY" textAlignment="CENTER">
+                     <font>
+                        <Font size="96.0" />
+                     </font></Label>
+               </children></Pane>
+         </top>
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #f0f8ff;" stylesheets="@../css/common_stylesheet.css" BorderPane.alignment="CENTER">
+               <children>
+                  <Button id="card_collection" mnemonicParsing="false" onMouseClicked="#cardCollectionClicked" prefHeight="75.0" prefWidth="1042.0" styleClass="menuButton" text="Card Collection">
+                     <VBox.margin>
+                        <Insets left="15.0" right="15.0" top="55.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="33.0" />
+                     </font></Button>
+                  <Button id="training" layoutX="25.0" layoutY="65.0" mnemonicParsing="false" onAction="#trainingButtonPressed" prefHeight="75.0" prefWidth="1042.0" styleClass="menuButton" text="Training">
+                     <font>
+                        <Font size="33.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="15.0" right="15.0" top="15.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button id="training" layoutX="25.0" layoutY="155.0" mnemonicParsing="false" onAction="#cramButtonPressed" prefHeight="75.0" prefWidth="1042.0" styleClass="menuButton" text="Cram">
+                     <font>
+                        <Font size="33.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="15.0" right="15.0" top="15.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button id="training" layoutX="25.0" layoutY="245.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="1042.0" styleClass="menuButton" text="Settings">
+                     <font>
+                        <Font size="33.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="15.0" right="15.0" top="15.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

@@ -12,10 +12,22 @@ public class Tester {
         TableManager.initiateTables();
         CardDao cardDao = new CardDao();
 
-        cardDao.save(new WordCard("how much is 2*2", "4"));
-        HashSet<WordCard> allCards = (HashSet<WordCard>) cardDao.getAll();
+        cardDao.save(new WordCard("歯", "tooth"));
 
-        cardDao.delete(cardDao.get(2).orElse(new WordCard()));
+        cardDao.save(new WordCard("葉", "leaf"));
+
+        cardDao.save(new WordCard("刃", "edge"));
+
+        cardDao.save(new WordCard("派", "clique"));
+
+        cardDao.save(new WordCard("羽", "feather"));
+
+        cardDao.save(new WordCard("覇", "supremacy "));
+
+        cardDao.save(new WordCard("波", "counter for waves"));
+
+
+        HashSet<WordCard> allCards = (HashSet<WordCard>) cardDao.getAll();
 
         allCards = (HashSet<WordCard>) cardDao.getAll();
         for (WordCard card : allCards){

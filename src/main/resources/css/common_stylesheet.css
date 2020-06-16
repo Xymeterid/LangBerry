@@ -1,0 +1,72 @@
+.menuButton{
+    -fx-background-color:#69b5fd;
+    -fx-text-fill:#f0f8ff;
+}
+
+.menuButton:hover{
+    -fx-text-fill:#69b5fd;
+    -fx-background-color:#f0f8ff;
+    -fx-border-color:#69b5fd;
+}
+
+.collectionItem{
+    fx-background-color:#f0f8ff;
+    -fx-border-color:#69b5fd;
+    -fx-border-insets:5;
+    -fx-border-radius:10;
+    -fx-background-insets:5;
+    -fx-background-radius:10;
+}
+
+.collectionItem:hover{
+    -fx-background-color:#69b5fd;
+}
+
+.titleCard{
+    -fx-text-fill:#69b5fd;
+    -fx-background-color:#f0f8ff;
+}
+
+.badAnswerButton{
+     -fx-background-color:#EE2E31;
+     -fx-text-fill:#f0f8ff;
+}
+
+.badAnswerButton:hover{
+    -fx-background-color:#f0f8ff;
+    -fx-text-fill:#EE2E31;
+    -fx-border-color:#EE2E31;
+}
+
+.unsureAnswerButton{
+    -fx-background-color:#FAA613;
+    -fx-text-fill:#f0f8ff;
+}
+
+.unsureAnswerButton:hover{
+    -fx-background-color:#f0f8ff;
+    -fx-text-fill:#FAA613;
+    -fx-border-color:#FAA613;
+}
+
+.goodAnswerButton{
+    -fx-background-color:#3BB273;
+    -fx-text-fill:#f0f8ff;
+}
+
+.goodAnswerButton:hover{
+    -fx-background-color:#f0f8ff;
+    -fx-text-fill:#3BB273;
+    -fx-border-color:#3BB273;
+}
+
+.excellentAnswerButton{
+    -fx-background-color:#69b5fd;
+    -fx-text-fill:#f0f8ff;
+}
+
+.excellentAnswerButton:hover{
+    -fx-background-color:#f0f8ff;
+    -fx-text-fill:#69b5fd;
+    -fx-border-color:#69b5fd;
+}

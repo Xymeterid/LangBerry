@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#itemClicked" prefHeight="119.0" prefWidth="1041.0" styleClass="collectionItem" stylesheets="@../css/common_stylesheet.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CollectionItemController">
+   <left>
+      <Label fx:id="question" text="EXAMPLE" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets left="40.0" />
+         </BorderPane.margin>
+         <font>
+            <Font size="68.0" />
+         </font></Label>
+   </left>
+   <right>
+      <Label fx:id="answer" text="MEANING" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="38.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets right="40.0" />
+         </BorderPane.margin></Label>
+   </right>
+</BorderPane>

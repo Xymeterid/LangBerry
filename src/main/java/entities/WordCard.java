@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
-public class WordCard {
+public class WordCard implements Comparable<WordCard>{
 
     private int id;
     private String question;
@@ -15,6 +15,11 @@ public class WordCard {
     private Integer nextReviewDay;
     private Integer nextReviewYear;
     private Integer lastDayIncrease;
+
+    @Override
+    public int compareTo(WordCard o) {
+        return answer.toLowerCase().compareTo(o.getAnswer().toLowerCase());
+    }
 
     public enum levelOfKnowledge{
         BAD,
@@ -33,6 +38,15 @@ public class WordCard {
     }
 
     public WordCard() {}
+
+    public WordCard(WordCard parent){
+        this.id = parent.id;
+        this.question = parent.question;
+        this.answer = parent.answer;
+        this.lastDayIncrease = parent.lastDayIncrease;
+        this.nextReviewYear = parent.nextReviewYear;
+        this.nextReviewDay = parent.nextReviewDay;
+    }
 
     public void solve(levelOfKnowledge level){
         switch (level){
