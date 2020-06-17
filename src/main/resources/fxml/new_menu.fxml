@@ -31,7 +31,7 @@
                      <font>
                         <Font size="33.0" />
                      </font></Button>
-                  <Button id="training" layoutX="25.0" layoutY="65.0" mnemonicParsing="false" onAction="#trainingButtonPressed" prefHeight="75.0" prefWidth="1042.0" styleClass="menuButton" text="Training">
+                  <Button id="training" fx:id="trainingButton" layoutX="25.0" layoutY="65.0" mnemonicParsing="false" onAction="#trainingButtonPressed" prefHeight="75.0" prefWidth="1042.0" styleClass="menuButton" text="Training">
                      <font>
                         <Font size="33.0" />
                      </font>
@@ -47,7 +47,7 @@
                         <Insets left="15.0" right="15.0" top="15.0" />
                      </VBox.margin>
                   </Button>
-                  <Button id="training" layoutX="25.0" layoutY="245.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="1042.0" styleClass="menuButton" text="Settings">
+                  <Button id="training" fx:id="settingsButton" layoutX="25.0" layoutY="245.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="1042.0" styleClass="menuButton" text="Settings">
                      <font>
                         <Font size="33.0" />
                      </font>

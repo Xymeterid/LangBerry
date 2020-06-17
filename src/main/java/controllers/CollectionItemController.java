@@ -27,11 +27,15 @@ public class CollectionItemController implements Initializable {
     private WordCard card;
 
     public void setQuestion(String newQuestion){
-        question.setText(newQuestion);
+        if (newQuestion.length() > 10)
+            question.setText(newQuestion.substring(0, 7) + "...");
+        else question.setText(newQuestion);
     }
 
     public void setAnswer(String newAnswer){
-        answer.setText(newAnswer);
+        if (newAnswer.length() > 20)
+            answer.setText(newAnswer.substring(0, 17) + "...");
+        else answer.setText(newAnswer);
     }
 
     public String getQuestion(){

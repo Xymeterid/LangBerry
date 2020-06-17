@@ -6,16 +6,19 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="733.0" prefWidth="1072.0" stylesheets="@../css/common_stylesheet.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CardController">
    <children>
-      <BorderPane prefHeight="642.0" prefWidth="1047.0">
+      <BorderPane prefHeight="682.0" prefWidth="1071.0" styleClass="titleCard">
          <top>
-            <BorderPane prefHeight="76.0" prefWidth="1047.0" styleClass="titleCard" BorderPane.alignment="CENTER">
+            <BorderPane prefHeight="76.0" prefWidth="1071.0" styleClass="titleCard" BorderPane.alignment="CENTER">
                <left>
                   <Button mnemonicParsing="false" onAction="#backButtonPressed" styleClass="menuButton" text="🠔" BorderPane.alignment="CENTER">
                      <BorderPane.margin>
@@ -36,12 +39,19 @@
                      </font>
                   </Button>
                </right>
+               <center>
+                  <TextField promptText="Paste code from Langberry Now here" style="-fx-background-color: #ffffff; -fx-border-color: #69b5fd;" BorderPane.alignment="CENTER">
+                     <BorderPane.margin>
+                        <Insets left="40.0" right="40.0" />
+                     </BorderPane.margin>
+                  </TextField>
+               </center>
             </BorderPane>
          </top>
          <center>
-            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <VBox prefHeight="445.0" prefWidth="1071.0" BorderPane.alignment="CENTER">
                <children>
-                  <Pane prefHeight="108.0" prefWidth="1047.0" />
+                  <Pane prefHeight="49.0" prefWidth="1071.0" />
                   <Line endX="970.0" layoutX="111.0" layoutY="351.0" startX="-100.0" stroke="#69b5fd">
                      <VBox.margin>
                         <Insets bottom="15.0" />
@@ -52,7 +62,7 @@
                         <Insets bottom="5.0" left="15.0" right="15.0" />
                      </VBox.margin>
                      <font>
-                        <Font size="24.0" />
+                        <Font size="36.0" />
                      </font>
                   </Label>
                   <TextField fx:id="questionInput">
@@ -60,12 +70,12 @@
                         <Insets left="15.0" right="15.0" />
                      </VBox.margin>
                      <font>
-                        <Font size="24.0" />
+                        <Font size="36.0" />
                      </font>
                   </TextField>
                   <Label layoutX="25.0" layoutY="118.0" text="Answer:">
                      <font>
-                        <Font size="24.0" />
+                        <Font size="36.0" />
                      </font>
                      <VBox.margin>
                         <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
@@ -73,7 +83,7 @@
                   </Label>
                   <TextField fx:id="answerInput" layoutX="25.0" layoutY="158.0">
                      <font>
-                        <Font size="24.0" />
+                        <Font size="36.0" />
                      </font>
                      <VBox.margin>
                         <Insets left="15.0" right="15.0" />
@@ -87,11 +97,56 @@
             </VBox>
          </center>
          <bottom>
-            <Label fx:id="info" text="Testing info" BorderPane.alignment="CENTER">
-               <BorderPane.margin>
-                  <Insets bottom="80.0" />
-               </BorderPane.margin>
-            </Label>
+            <GridPane prefHeight="228.0" prefWidth="1071.0" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="statistics" alignment="CENTER" prefHeight="30.0" prefWidth="10000.0" text="Statistics" GridPane.columnSpan="2">
+                     <font>
+                        <Font size="36.0" />
+                     </font></Label>
+                  <Label fx:id="nextReviewInLabel" text="Next review will be:" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="15.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lastReviewWasLabel" text="Last review was:" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="15.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="nextReviewIn" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="15.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lastReviewWas" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="15.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
          </bottom></BorderPane>
+      <Button fx:id="deleteButton" layoutX="993.0" layoutY="688.0" mnemonicParsing="false" onAction="#onDeleteButtonPressed" styleClass="badAnswerButton" text="Delete" />
    </children>
 </AnchorPane>

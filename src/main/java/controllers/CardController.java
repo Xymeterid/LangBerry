@@ -3,15 +3,19 @@ package controllers;
 import database.card.CardDao;
 import entities.WordCard;
 import javafx.concurrent.WorkerStateEvent;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import utils.CardBundle;
 import utils.FXUtils;
 
 import javax.smartcardio.Card;
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class CardController implements Initializable {
@@ -23,7 +27,10 @@ public class CardController implements Initializable {
     TextField questionInput, answerInput;
 
     @FXML
-    Label info;
+    Label nextReviewIn, lastReviewWas, statistics, nextReviewInLabel, lastReviewWasLabel;
+
+    @FXML
+    Button deleteButton;
 
     public void backButtonPressed() {
         FXUtils.loadScene(getClass().getResource("../fxml/card_collection.fxml"));
@@ -49,7 +56,47 @@ public class CardController implements Initializable {
         if (type == CardBundle.requestType.SHOW_EXISTING){
             questionInput.setText(card.getQuestion());
             answerInput.setText(card.getAnswer());
-            info.setText(card.toString());
+
+            LocalDateTime timeNow = LocalDateTime.of(LocalDate.now(), LocalTime.NOON);
+            LocalDateTime nextReview = LocalDateTime.of(LocalDate.ofYearDay(card.getNextReviewYear(), card.getNextReviewDay()), LocalTime.NOON);
+            LocalDateTime lastReview = nextReview.minusDays(card.getLastDayIncrease());
+            lastReviewWas.setText(lastReview.toLocalDate().toString());
+            if (nextReview.isBefore(timeNow) || nextReview.equals(timeNow)){
+                nextReviewIn.setText("Now");
+            }
+            else {
+                int temp = nextReview.getDayOfYear() - timeNow.getDayOfYear();
+                while (temp < 0) temp += 365;
+                if (temp == 1){
+                    nextReviewIn.setText(nextReview.toLocalDate().toString() + " (" + temp + " day)");
+                }
+                else {
+                    nextReviewIn.setText(nextReview.toLocalDate().toString() + " (" + temp + " days)");
+                }
+            }
+            System.out.println(card.toString());
+        }
+        else {
+            statistics.setVisible(false);
+            nextReviewIn.setVisible(false);
+            lastReviewWas.setVisible(false);
+            nextReviewInLabel.setVisible(false);
+            lastReviewWasLabel.setVisible(false);
+            deleteButton.setVisible(false);
+        }
+    }
+
+    public void onDeleteButtonPressed(ActionEvent actionEvent) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Are you sure?");
+        alert.setHeaderText("Are you sure you want to delete this card?");
+        alert.setContentText("This process is irreversible");
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK){
+            CardDao cardDao = new CardDao();
+            cardDao.delete(card);
+            FXUtils.loadScene(getClass().getResource("../fxml/card_collection.fxml"));
         }
     }
 }
