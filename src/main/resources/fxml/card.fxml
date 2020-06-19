@@ -40,7 +40,7 @@
                   </Button>
                </right>
                <center>
-                  <TextField promptText="Paste code from Langberry Now here" style="-fx-background-color: #ffffff; -fx-border-color: #69b5fd;" BorderPane.alignment="CENTER">
+                  <TextField fx:id="importCodeArea" promptText="Paste code from Langberry Now here" style="-fx-background-color: #ffffff; -fx-border-color: #69b5fd;" BorderPane.alignment="CENTER">
                      <BorderPane.margin>
                         <Insets left="40.0" right="40.0" />
                      </BorderPane.margin>

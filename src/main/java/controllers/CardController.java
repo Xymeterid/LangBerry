@@ -32,6 +32,9 @@ public class CardController implements Initializable {
     @FXML
     Button deleteButton;
 
+    @FXML
+    TextField importCodeArea;
+
     public void backButtonPressed() {
         FXUtils.loadScene(getClass().getResource("../fxml/card_collection.fxml"));
     }
@@ -84,6 +87,24 @@ public class CardController implements Initializable {
             lastReviewWasLabel.setVisible(false);
             deleteButton.setVisible(false);
         }
+
+        importCodeArea.textProperty().addListener((observable, oldValue, newValue) -> {
+            String[] splits = checkIfValidCode(newValue);
+            if (splits != null){
+                questionInput.setText(splits[0]);
+                answerInput.setText(splits[1]);
+            }
+        });
+    }
+
+    private String[] checkIfValidCode(String newValue) {
+        String[] splits = newValue.split("#");
+        if (splits.length != 2){
+            splits = new String[2];
+            splits[0] = "";
+            splits[1] = "";
+        }
+        return splits;
     }
 
     public void onDeleteButtonPressed(ActionEvent actionEvent) {
