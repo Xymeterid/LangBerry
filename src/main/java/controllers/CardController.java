@@ -2,7 +2,6 @@ package controllers;
 
 import database.card.CardDao;
 import entities.WordCard;
-import javafx.concurrent.WorkerStateEvent;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -10,7 +9,6 @@ import javafx.scene.control.*;
 import utils.CardBundle;
 import utils.FXUtils;
 
-import javax.smartcardio.Card;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.LocalDateTime;

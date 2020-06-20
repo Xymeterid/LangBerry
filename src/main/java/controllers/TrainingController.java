@@ -66,7 +66,7 @@ public class TrainingController implements Initializable {
         if (command_type == TypeBundle.command_type.TRAINING){
             LocalDateTime timeNow = LocalDateTime.now();
             cardsToComplete = (HashSet<WordCard>) cardDao.getAlThatMatch("WHERE nextReviewYear<"+timeNow.getYear()+" OR " +
-                    "(nextReviewYear="+timeNow.getYear()+" AND nextReviewDay<"+timeNow.getDayOfYear()+")");
+                    "(nextReviewYear="+timeNow.getYear()+" AND nextReviewDay<="+timeNow.getDayOfYear()+")");
         }
         else if (command_type == TypeBundle.command_type.CRAM){
             CardDao cardDao = new CardDao();
