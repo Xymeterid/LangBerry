@@ -15,6 +15,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.ResourceBundle;
 
+//Контреллер-клас для вікна навчання - відповідає за усі дії користувача на цьому екрані
 public class TrainingController implements Initializable {
 
     @FXML
@@ -29,6 +30,7 @@ public class TrainingController implements Initializable {
     private WordCard currentCard;
     private CardDao cardDao = new CardDao();
 
+    //Ініціалізація сцени - визначаємо тип навчання (training або cram), генеруємо список карткок, встановлюємо ітератор по карткам
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         command_type = (TypeBundle.command_type) resources.getObject("command");
@@ -39,6 +41,7 @@ public class TrainingController implements Initializable {
         showNextCard();
     }
 
+    //Відображає наступну картку для ревью, ховає відповідь і кнопки для оцінки результату. Якщо картки скінчились, виводить відповідне повідомлення
     private void showNextCard() {
         badButton.setVisible(false);
         unsureButton.setVisible(false);
@@ -62,6 +65,8 @@ public class TrainingController implements Initializable {
         }
     }
 
+    //Генерує список карток на вивчення, залежно від типу тренування - в training обираються лише картки, в яких наступне ревью має бути сьогодні
+    //або мало бути ще раніше, а в cram обираються усі картки зі спробою показати першими ті, що користувач знає найгірше
     private void generateReviewList() {
         if (command_type == TypeBundle.command_type.TRAINING){
             LocalDateTime timeNow = LocalDateTime.now();
@@ -74,6 +79,7 @@ public class TrainingController implements Initializable {
         }
     }
 
+    //Показує відповідь і кнопки для оцінки результату
     public void showAnswerButtonPressed() {
         answer.setVisible(true);
         badButton.setVisible(true);
@@ -83,9 +89,13 @@ public class TrainingController implements Initializable {
         showAnswerButton.setVisible(false);
     }
 
+    //Повертає користувача до попереднього екрану програми - головного меню
     public void backButtonPressed() {
         FXUtils.loadScene(getClass().getResource("../fxml/new_menu.fxml"));
     }
+
+    //Наступні 4 методи реєструють різні відповіді на картку, виставляючи дату наступного ревью відповідно до знань користувача,
+    //після чого показують наступну картку
 
     public void badButtonPressed() {
         if (command_type == TypeBundle.command_type.TRAINING) {

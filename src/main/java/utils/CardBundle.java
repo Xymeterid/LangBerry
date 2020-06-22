@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import java.util.ListResourceBundle;
 
+//ListResourceBundle для передачі карток між різними сценами
 @AllArgsConstructor
 public class CardBundle extends ListResourceBundle {
 

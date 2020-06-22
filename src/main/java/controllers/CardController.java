@@ -16,6 +16,7 @@ import java.time.LocalTime;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
+//Контреллер-клас для окремої картки - відповідає за усі дії користувача на цьому екрані
 public class CardController implements Initializable {
 
     CardBundle.requestType type;
@@ -33,10 +34,12 @@ public class CardController implements Initializable {
     @FXML
     TextField importCodeArea;
 
+    //Повертає користувача до попереднього єкрану програми - коллекції карток
     public void backButtonPressed() {
         FXUtils.loadScene(getClass().getResource("../fxml/card_collection.fxml"));
     }
 
+    //Зберігає нову картку в базі даних або модифікує існуючу, залежно від режиму
     public void saveButtonPressed() {
         CardDao cardDao = new CardDao();
         if (type == CardBundle.requestType.ADD_NEW){
@@ -50,6 +53,7 @@ public class CardController implements Initializable {
         FXUtils.loadScene(getClass().getResource("../fxml/card_collection.fxml"));
     }
 
+    //Ініціалізація сцени - визначається тип операції (створення нової картки чи перегляд існуючої), вираховується час отсаннього та наступного ревью
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         card = (WordCard) resources.getObject("card");
@@ -95,6 +99,7 @@ public class CardController implements Initializable {
         });
     }
 
+    //Перевірка чи є введений код валідним
     private String[] checkIfValidCode(String newValue) {
         String[] splits = newValue.split("#");
         if (splits.length != 2){
@@ -105,6 +110,7 @@ public class CardController implements Initializable {
         return splits;
     }
 
+    //Видаляє обрану карту за бази даних, попередньо перепитавши юзера чи він справді хоче це зробити
     public void onDeleteButtonPressed(ActionEvent actionEvent) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Are you sure?");

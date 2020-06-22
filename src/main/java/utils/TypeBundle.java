@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import java.util.ListResourceBundle;
 
+//ListResourceBundle для передачі інформації про тип тренування
 @AllArgsConstructor
 public class TypeBundle extends ListResourceBundle {
 

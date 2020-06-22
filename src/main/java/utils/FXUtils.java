@@ -11,11 +11,13 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ListResourceBundle;
 
+//Набір утилітл для зручного завантаження JavaFX сцен
 public class FXUtils {
 
     @Setter
     private static Stage stage;
 
+    //Завантаження сцени за даним URL
     public static Scene loadScene(URL path){
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(path);
@@ -30,6 +32,7 @@ public class FXUtils {
         return null;
     }
 
+    //Завантаження сцени за даним URL і з наданим ListResourceBundle
     public static Scene loadScene(URL path, ListResourceBundle bundle){
         try {
             Parent root = FXMLLoader.load(path, bundle);

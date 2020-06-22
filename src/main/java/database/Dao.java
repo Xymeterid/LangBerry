@@ -3,6 +3,7 @@ package database;
 import java.util.Collection;
 import java.util.Optional;
 
+//Стандартний Dao інтерфейс для роботи з базами даних
 public interface Dao<T> {
 
     Optional<T> get(int id);

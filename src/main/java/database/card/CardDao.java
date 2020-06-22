@@ -16,10 +16,12 @@ import java.util.Set;
 
 import static database.SqlManager.connection;
 
+//Класс доступу до бази данник карток
 public class CardDao implements Dao<WordCard> {
 
     private String tableName = TableManager.getCardsTableName();
 
+    //Отримати картку за id або нічого якщо такої картки немає
     @Override
     public Optional<WordCard> get(int id) {
         try {
@@ -35,6 +37,7 @@ public class CardDao implements Dao<WordCard> {
         return Optional.empty();
     }
 
+    //Отримати усі картики
     @Override
     public Collection<WordCard> getAll() {
         try {
@@ -53,6 +56,7 @@ public class CardDao implements Dao<WordCard> {
         return null;
     }
 
+    //Зберегти нову картку в базу даних
     @Override
     public int save(WordCard wordCard) {
         try {
@@ -68,6 +72,7 @@ public class CardDao implements Dao<WordCard> {
         }
     }
 
+    //Модифікувати існуючу картку
     @Override
     public void update(WordCard wordCard) {
         try {
@@ -81,6 +86,7 @@ public class CardDao implements Dao<WordCard> {
         }
     }
 
+    //Видалити картку
     @Override
     public void delete(WordCard wordCard) {
         try {
@@ -91,6 +97,7 @@ public class CardDao implements Dao<WordCard> {
         }
     }
 
+    //Отримати усі картки, що відповідають наданій SQL query
     @Override
     public Collection<WordCard> getAlThatMatch(String query) {
         try {
@@ -110,6 +117,7 @@ public class CardDao implements Dao<WordCard> {
         return new HashSet<>();
     }
 
+    //Отримує картку з ResultSet, що отримується після виконання executeQuery
     private WordCard extractCardFromResultSet(ResultSet rs) throws SQLException {
         return new WordCard(
                 rs.getInt("id"),
@@ -121,6 +129,7 @@ public class CardDao implements Dao<WordCard> {
         );
     }
 
+    //Заповнює PreparedStatement даними з картки
     private void fillStatementFromItem(WordCard wordCard, PreparedStatement ps) throws SQLException {
         ps.setString(1, wordCard.getQuestion());
         ps.setString(2, wordCard.getAnswer());

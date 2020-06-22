@@ -5,15 +5,22 @@ import lombok.Data;
 
 import java.time.LocalDateTime;
 
+//Клас навчальної картки
 @Data
 @AllArgsConstructor
 public class WordCard implements Comparable<WordCard>{
 
+    //Унікальний id картки
     private int id;
+    //Питання
     private String question;
+    //Відповідь
     private String answer;
+    //День наступного ревью
     private Integer nextReviewDay;
+    //Рік наступного ревью
     private Integer nextReviewYear;
+    //Останнє збільшення кількості днів до наступного ревью (необхідно що б єффективно збільшувати кількість в залежності від відповіді користувача)
     private Integer lastDayIncrease;
 
     @Override
@@ -39,6 +46,7 @@ public class WordCard implements Comparable<WordCard>{
 
     public WordCard() {}
 
+    //Копіювальний конструктор
     public WordCard(WordCard parent){
         this.id = parent.id;
         this.question = parent.question;
@@ -48,6 +56,7 @@ public class WordCard implements Comparable<WordCard>{
         this.nextReviewDay = parent.nextReviewDay;
     }
 
+    //Виставляє наступний день ревью в залежності від рівня знань
     public void solve(levelOfKnowledge level){
         switch (level){
             case BAD:

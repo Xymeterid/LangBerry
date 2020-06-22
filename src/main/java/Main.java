@@ -6,6 +6,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import utils.FXUtils;
 
+//Головний клас для запуску програми
 public class Main extends Application {
 
     @Override

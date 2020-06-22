@@ -5,6 +5,7 @@ import lombok.Getter;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+//Менеджер роботи з таблицями в базі даних
 public class TableManager {
 
     private static boolean hasTable = false;
@@ -12,13 +13,15 @@ public class TableManager {
     @Getter
     private static String cardsTableName = "cards";
 
+    //Ініціалізація таблиць
     public static synchronized void initiateTables(){
         if (hasTable) return;
-        createItemsTable();
+        createCardsTable();
         hasTable = true;
     }
 
-    private static void createItemsTable() {
+    //Ініціалізацію таблиці карток
+    private static void createCardsTable() {
         if (hasTable) return;
 
         String sqlQuery = "CREATE TABLE IF NOT EXISTS " + cardsTableName + "" +
