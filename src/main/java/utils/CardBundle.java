@@ -8,13 +8,31 @@ import lombok.Setter;
 import java.util.ListResourceBundle;
 
 //ListResourceBundle для передачі карток між різними сценами
-@AllArgsConstructor
 public class CardBundle extends ListResourceBundle {
 
-    @Getter @Setter
     private WordCard card;
-    @Getter @Setter
     private requestType type;
+
+    public CardBundle(WordCard card, requestType type) {
+        this.card = card;
+        this.type = type;
+    }
+
+    public WordCard getCard() {
+        return this.card;
+    }
+
+    public requestType getType() {
+        return this.type;
+    }
+
+    public void setCard(WordCard card) {
+        this.card = card;
+    }
+
+    public void setType(requestType type) {
+        this.type = type;
+    }
 
     public enum requestType{
         NO_TYPE,

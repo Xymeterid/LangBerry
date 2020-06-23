@@ -5,7 +5,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import lombok.Setter;
 
 import java.io.IOException;
 import java.net.URL;
@@ -14,7 +13,6 @@ import java.util.ListResourceBundle;
 //Набір утилітл для зручного завантаження JavaFX сцен
 public class FXUtils {
 
-    @Setter
     private static Stage stage;
 
     //Завантаження сцени за даним URL
@@ -45,4 +43,7 @@ public class FXUtils {
         return null;
     }
 
+    public static void setStage(Stage stage) {
+        FXUtils.stage = stage;
+    }
 }
